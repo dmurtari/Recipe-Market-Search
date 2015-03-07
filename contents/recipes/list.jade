@@ -5,7 +5,8 @@ each item in data.recipes
         .col-md-3
             img(src=item.image_url, width="100")
         .col-md-3
-            =item.title
+            a(href="#", onClick='recipes.viewRecipe("' + item.recipe_id + '")')
+                =item.title
         .col-md-3
             =item.publisher
     br

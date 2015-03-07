@@ -18,6 +18,26 @@ var recipes = {
 
     },    
 
+    viewRecipe: function(id) {
+
+        $.get("http://food2fork-api.herokuapp.com/recipe/get/" + id, function(data) {
+
+            data = JSON.parse(data);
+            console.log(data)
+
+            if (data){
+
+                $.get("/recipesearch/recipes/view.jade", function(template) {
+                    var html = jade.render(template, {
+                        data: data
+                    })
+                    console.log(html)
+                    $("#list").html(html)
+                })
+            }
+        })
+    },
+
     load: function() {
 
         $.get("/recipesearch/recipes/ui.jade", function(template) {
