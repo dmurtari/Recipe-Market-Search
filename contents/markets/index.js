@@ -15,6 +15,7 @@ var markets = {
                     })
                     console.log(html)
                     $("#list").html(html)
+                    markets.viewMarket(data.results[0].id)
                 })
             }
         })
@@ -32,7 +33,7 @@ var markets = {
                         data: data.marketdetails
                     })
                     console.log(html)
-                    $("#list").html(html)
+                    $("#view").html(html)
                 })
             }
         })

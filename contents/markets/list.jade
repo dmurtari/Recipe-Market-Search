@@ -3,13 +3,13 @@ h3= "Results"
 .row
     .col-md-3
         strong= "Distance"
-    .col-md-3
+    .col-md-9
         strong= "Market Name"
 
 each item in data.results
     .row
         .col-md-3
             = item.marketname.split(" ")[0] + " miles"
-        .col-md-3
+        .col-md-9
             a(href="#", onClick='markets.viewMarket("' + item.id + '")')
                 = item.marketname.split(" ").slice(2).join(" ")

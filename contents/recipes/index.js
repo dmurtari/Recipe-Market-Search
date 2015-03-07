@@ -12,6 +12,7 @@ var recipes = {
                     data: data
                 })
                 $("#list").html(html)
+                recipes.viewRecipe(data.recipes[0].recipe_id)
             })
 
         })
@@ -32,7 +33,7 @@ var recipes = {
                         data: data
                     })
                     console.log(html)
-                    $("#list").html(html)
+                    $("#view").html(html)
                 })
             }
         })
