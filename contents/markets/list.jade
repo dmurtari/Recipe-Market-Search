@@ -11,4 +11,5 @@ each item in data.results
         .col-md-3
             = item.marketname.split(" ")[0] + " miles"
         .col-md-3
-            = item.marketname.split(" ").slice(2).join(" ")
+            a(href="#", onClick='markets.viewMarket("' + item.id + '")')
+                = item.marketname.split(" ").slice(2).join(" ")

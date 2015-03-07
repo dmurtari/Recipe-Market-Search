@@ -20,6 +20,24 @@ var markets = {
         })
     },
 
+    viewMarket: function(id) {
+
+        $.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + id, function(data) {
+
+            console.log(data)
+            if (data.marketdetails){
+
+                $.get("/recipesearch/markets/view.jade", function(template) {
+                    var html = jade.render(template, {
+                        data: data.marketdetails
+                    })
+                    console.log(html)
+                    $("#list").html(html)
+                })
+            }
+        })
+    },
+
     load: function() {
 
         $.get("/recipesearch/markets/ui.jade", function(template) {
