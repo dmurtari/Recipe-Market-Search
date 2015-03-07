@@ -1,0 +1,15 @@
+h5 Search
+.row
+    .col-md-8
+        .form-group.form-group-default
+            label Ingredient            
+            input#ingredient.form-control(type='text', required='')                
+    .col-md-4                         
+        button.btn.btn-primary(onClick='recipes.searchByIngredient($("#ingredient").val())') Search
+
+h5 Favorite Ingredients
+ul
+    li
+        a(href="#" onClick='recipes.searchByIngredient(chicken)') Chicken
+    li
+        a(href="#" onClick='recipes.searchByIngredient(tofu)') Tofu
