@@ -3,6 +3,9 @@ var recipes = {
     searchByIngredient: function(ingredient) {
 
         $.get("http://food2fork-api.herokuapp.com/recipe/search/" + ingredient, function(data) {
+            
+            data = JSON.parse(data);
+            console.log(data)
 
             $.get("/recipesearch/recipes/list.jade", function(template) {
                 var html = jade.render(template, {
@@ -23,7 +26,7 @@ var recipes = {
         })
 
         // default search results
-        recipes.searchByChamber('Chicken')
+        recipes.searchByIngredient('Chicken')
 
     }
 

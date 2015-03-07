@@ -1,6 +1,11 @@
 h3 Results
-each item in data.results
-    pre= JSON.stringify(item)
 
-h3 Raw data
-pre= JSON.stringify(data, null, ' ')
+each item in data.recipes
+    .row
+        .col-md-3
+            img(src=item.image_url, width="100")
+        .col-md-3
+            =item.title
+        .col-md-3
+            =item.publisher
+    br
