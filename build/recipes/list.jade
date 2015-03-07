@@ -1,0 +1,10 @@
+h3 Results
+
+each item in data.recipes
+    .row
+        .col-md-3
+            img(src=item.image_url, width="80")
+        .col-md-9
+            a(href="#", onClick='recipes.viewRecipe("' + item.recipe_id + '")')
+                =item.title
+    br

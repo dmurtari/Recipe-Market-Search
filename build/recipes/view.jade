@@ -1,0 +1,16 @@
+h5= Details
+
+h3= data.recipe.title
+br
+
+.row
+    strong= "Ingredients: "
+    ul
+    for ingredient in data.recipe.ingredients
+        li= ingredient
+
+br
+.row
+    strong= "Source: "
+        a(href= data.recipe.source_url)
+            =data.recipe.source_url
