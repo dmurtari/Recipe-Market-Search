@@ -9,7 +9,7 @@ var markets = {
             console.log('got' + data)
             if (data.results){
 
-                $.get("/recipesearch/markets/list.jade", function(template) {
+                $.get("/Recipe-Market-Search/markets/list.jade", function(template) {
                     var html = jade.render(template, {
                         data: data
                     })
@@ -28,7 +28,7 @@ var markets = {
             console.log(data)
             if (data.marketdetails){
 
-                $.get("/recipesearch/markets/view.jade", function(template) {
+                $.get("/Recipe-Market-Search/markets/view.jade", function(template) {
                     var html = jade.render(template, {
                         data: data.marketdetails
                     })
@@ -41,7 +41,7 @@ var markets = {
 
     load: function() {
 
-        $.get("/recipesearch/markets/ui.jade", function(template) {
+        $.get("/Recipe-Market-Search/markets/ui.jade", function(template) {
             var html = jade.render(template)
             $("#ui").html(html)
         })

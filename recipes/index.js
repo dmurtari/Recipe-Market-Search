@@ -7,7 +7,7 @@ var recipes = {
             data = JSON.parse(data);
             console.log(data)
 
-            $.get("/recipesearch/recipes/list.jade", function(template) {
+            $.get("/Recipe-Market-Search/recipes/list.jade", function(template) {
                 var html = jade.render(template, {
                     data: data
                 })
@@ -28,7 +28,7 @@ var recipes = {
 
             if (data){
 
-                $.get("/recipesearch/recipes/view.jade", function(template) {
+                $.get("/Recipe-Market-Search/recipes/view.jade", function(template) {
                     var html = jade.render(template, {
                         data: data
                     })
@@ -41,7 +41,7 @@ var recipes = {
 
     load: function() {
 
-        $.get("/recipesearch/recipes/ui.jade", function(template) {
+        $.get("/Recipe-Market-Search/recipes/ui.jade", function(template) {
             var html = jade.render(template)
             $("#ui").html(html)
         })
